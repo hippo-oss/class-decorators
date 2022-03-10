@@ -5,7 +5,7 @@ orbs:
     executors:
       default:
         docker:
-          - image: circleci/node:fermium
+          - image: cimg/node:lts
     commands:
       build-source:
         steps:
