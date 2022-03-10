@@ -18,14 +18,20 @@
         "ci:test": "NODE_ENV=test CI=1 jest --config=jest.config.js",
         "ci:test:coverage": "NODE_ENV=test CI=1 jest --config=jest.coverage.config.js"
     },
-    "dependencies": {},
+    "dependencies": {
+        "@hippo-oss/dto-decorators": ">=0.1.0"
+    },
     "peerDependencies": {
+        "class-transformer": ">=0.5.1",
+        "class-validator": ">=0.13.2"
     },
     "devDependencies": {
         "@types/jest": "27.4.1",
         "@types/node": "16.11.26",
         "@typescript-eslint/eslint-plugin": "5.12.1",
         "@typescript-eslint/parser": "5.12.1",
+        "class-transformer": "0.5.1",
+        "class-validator": "0.13.2",
         "eslint": "8.10.0",
         "eslint-config-airbnb-base": "15.0.0",
         "eslint-config-airbnb-typescript": "16.1.0",
