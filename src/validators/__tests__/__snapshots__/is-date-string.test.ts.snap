@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IsDateString does not allow non-date string 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isIso8601": "property must be a valid ISO 8601 date string",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": "foo",
+    },
+    "value": "foo",
+  },
+]
+`;
+
+exports[`IsDateString does not allow required date string to be omitted 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isDefined": "property should not be null or undefined",
+      "isIso8601": "property must be a valid ISO 8601 date string",
+    },
+    "property": "property",
+    "target": Fixture {},
+    "value": undefined,
+  },
+]
+`;

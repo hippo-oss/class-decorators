@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IsString does not allow non-string 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isString": "property must be a string",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": 42,
+    },
+    "value": 42,
+  },
+]
+`;
+
+exports[`IsString does not allow required string of too great of a length 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "maxLength": "property must be shorter than or equal to 1 characters",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": "foo",
+    },
+    "value": "foo",
+  },
+]
+`;
+
+exports[`IsString does not allow required string of too short a length 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "minLength": "property must be longer than or equal to 1 characters",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": "",
+    },
+    "value": "",
+  },
+]
+`;
+
+exports[`IsString does not allow required string that does not match a pattern 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "matches": "property must match /foo/ regular expression",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": "bar",
+    },
+    "value": "bar",
+  },
+]
+`;
+
+exports[`IsString does not allow required string to be omitted 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isDefined": "property should not be null or undefined",
+      "isString": "property must be a string",
+    },
+    "property": "property",
+    "target": Fixture {},
+    "value": undefined,
+  },
+]
+`;
+
+exports[`IsString does not allow string for string[] 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isArray": "property must be an array",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": "foo",
+    },
+    "value": "foo",
+  },
+]
+`;
+
+exports[`IsString does not allow string[] that is too large 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "arrayMaxSize": "property must contain not more than 0 elements",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": Array [
+        "foo",
+      ],
+    },
+    "value": Array [
+      "foo",
+    ],
+  },
+]
+`;
+
+exports[`IsString does not allow string[] that is too small 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "arrayMinSize": "property must contain at least 1 elements",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": Array [],
+    },
+    "value": Array [],
+  },
+]
+`;

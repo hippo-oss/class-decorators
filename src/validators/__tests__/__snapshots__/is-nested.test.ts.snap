@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IsNested does not allow non-nested 1`] = `
+Array [
+  ValidationError {
+    "children": Array [
+      ValidationError {
+        "constraints": Object {
+          "nestedValidation": "nested property property must be either object or array",
+        },
+        "property": "property",
+        "target": [Function],
+        "value": "foo",
+      },
+    ],
+    "property": "property",
+    "target": Fixture {
+      "property": "foo",
+    },
+    "value": "foo",
+  },
+]
+`;
+
+exports[`IsNested does not allow required nested to be omitted 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isDefined": "property should not be null or undefined",
+    },
+    "property": "property",
+    "target": Fixture {},
+    "value": undefined,
+  },
+]
+`;

@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IsNumber does not allow non-number 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isNumber": "property must be a number conforming to the specified constraints",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": "42",
+    },
+    "value": "42",
+  },
+]
+`;
+
+exports[`IsNumber does not allow number that is too large 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "max": "property must not be greater than 0",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": 1.25,
+    },
+    "value": 1.25,
+  },
+]
+`;
+
+exports[`IsNumber does not allow number that is too small 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "min": "property must not be less than 0",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": -1.25,
+    },
+    "value": -1.25,
+  },
+]
+`;
+
+exports[`IsNumber does not allow required number to be omitted 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isDefined": "property should not be null or undefined",
+      "isNumber": "property must be a number conforming to the specified constraints",
+    },
+    "property": "property",
+    "target": Fixture {},
+    "value": undefined,
+  },
+]
+`;
