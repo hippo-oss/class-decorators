@@ -1,0 +1,41 @@
+{
+    "name": "@hippo-oss/class-decorators",
+    "version": "0.1.0",
+    "description": "DTO decorators with class-transformer and class-validator.",
+    "main": "./dist/index.js",
+    "repository": "https://github.com/hippo-oss/class-decorators",
+    "author": "Hippo Engineering",
+    "license": "MIT",
+    "private": false,
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc --build tsconfig.build.json",
+        "build:force": "tsc --build tsconfig.build.json --force",
+        "lint": "eslint src --ext .ts --cache",
+        "lint:force": "eslint src --ext .ts",
+        "test": "NODE_ENV=test jest --config=jest.config.js",
+        "test:coverage": "NODE_ENV=test jest --config=jest.coverage.config.js",
+        "ci:test": "NODE_ENV=test CI=1 jest --config=jest.config.js",
+        "ci:test:coverage": "NODE_ENV=test CI=1 jest --config=jest.coverage.config.js"
+    },
+    "dependencies": {},
+    "peerDependencies": {
+    },
+    "devDependencies": {
+        "@types/jest": "27.4.1",
+        "@types/node": "16.11.26",
+        "@typescript-eslint/eslint-plugin": "5.12.1",
+        "@typescript-eslint/parser": "5.12.1",
+        "eslint": "8.10.0",
+        "eslint-config-airbnb-base": "15.0.0",
+        "eslint-config-airbnb-typescript": "16.1.0",
+        "eslint-plugin-import": "2.25.4",
+        "eslint-plugin-prefer-arrow": "1.2.3",
+        "jest": "27.5.1",
+        "jest-junit": "13.0.0",
+        "reflect-metadata": "0.1.13",
+        "ts-jest": "27.1.3",
+        "ts-node": "10.5.0",
+        "typescript": "4.5.5"
+    }
+}
