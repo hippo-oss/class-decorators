@@ -19,7 +19,7 @@
         "ci:test:coverage": "NODE_ENV=test CI=1 jest --config=jest.coverage.config.js"
     },
     "dependencies": {
-        "@hippo-oss/dto-decorators": ">=0.1.0"
+        "@hippo-oss/dto-decorators": ">=0.1.2"
     },
     "peerDependencies": {
         "class-transformer": ">=0.5.1",
@@ -28,6 +28,7 @@
     "devDependencies": {
         "@types/jest": "27.4.1",
         "@types/node": "16.11.26",
+        "@types/validator": "13.7.1",
         "@typescript-eslint/eslint-plugin": "5.12.1",
         "@typescript-eslint/parser": "5.12.1",
         "class-transformer": "0.5.1",

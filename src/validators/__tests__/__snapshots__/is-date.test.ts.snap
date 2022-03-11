@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IsDate does not allow non-date 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isDate": "property must be a Date instance",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": "foo",
+    },
+    "value": "foo",
+  },
+]
+`;
+
+exports[`IsDate does not allow required date to be omitted 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isDate": "property must be a Date instance",
+      "isDefined": "property should not be null or undefined",
+    },
+    "property": "property",
+    "target": Fixture {},
+    "value": undefined,
+  },
+]
+`;

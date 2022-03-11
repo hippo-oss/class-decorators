@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IsEnum does not allow non enum 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isEnum": "property must be a valid enum value",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": "baz",
+    },
+    "value": "baz",
+  },
+]
+`;
+
+exports[`IsEnum does not allow required enum to be omitted 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isDefined": "property should not be null or undefined",
+      "isEnum": "property must be a valid enum value",
+    },
+    "property": "property",
+    "target": Fixture {},
+    "value": undefined,
+  },
+]
+`;

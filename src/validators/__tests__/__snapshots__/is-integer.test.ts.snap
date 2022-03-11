@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IsInteger does not allow float 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isInt": "property must be an integer number",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": 42.1,
+    },
+    "value": 42.1,
+  },
+]
+`;
+
+exports[`IsInteger does not allow integer that is too large 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "max": "property must not be greater than 0",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": 1,
+    },
+    "value": 1,
+  },
+]
+`;
+
+exports[`IsInteger does not allow integer that is too small 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "min": "property must not be less than 0",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": -1,
+    },
+    "value": -1,
+  },
+]
+`;
+
+exports[`IsInteger does not allow non-integer 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isInt": "property must be an integer number",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": "42",
+    },
+    "value": "42",
+  },
+]
+`;
+
+exports[`IsInteger does not allow required integer to be omitted 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isDefined": "property should not be null or undefined",
+      "isInt": "property must be an integer number",
+    },
+    "property": "property",
+    "target": Fixture {},
+    "value": undefined,
+  },
+]
+`;

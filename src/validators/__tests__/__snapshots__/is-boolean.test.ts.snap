@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IsBoolean does not allow non-boolean 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isBoolean": "property must be a boolean value",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": "string",
+    },
+    "value": "string",
+  },
+]
+`;
+
+exports[`IsBoolean does not allow required boolean to be omitted 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isBoolean": "property must be a boolean value",
+      "isDefined": "property should not be null or undefined",
+    },
+    "property": "property",
+    "target": Fixture {},
+    "value": undefined,
+  },
+]
+`;

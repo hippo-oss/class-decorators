@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IsUUID does not allow a non-uuid of the wrong type 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isUuid": "property must be a UUID",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": "not-a-uuid",
+    },
+    "value": "not-a-uuid",
+  },
+]
+`;
+
+exports[`IsUUID does not allow a required uuid of the wrong version 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isUuid": "property must be a UUID",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": "c50318b5-a0d1-11ec-b448-8c85905fd9db",
+    },
+    "value": "c50318b5-a0d1-11ec-b448-8c85905fd9db",
+  },
+]
+`;
+
+exports[`IsUUID does not allow required uuid to be omitted 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isDefined": "property should not be null or undefined",
+      "isUuid": "property must be a UUID",
+    },
+    "property": "property",
+    "target": Fixture {},
+    "value": undefined,
+  },
+]
+`;

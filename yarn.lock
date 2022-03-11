@@ -320,10 +320,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@hippo-oss/dto-decorators@>=0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@hippo-oss/dto-decorators/-/dto-decorators-0.1.0.tgz#e4f7c98002a23061a8600d76802fd4ffc823c187"
-  integrity sha512-tf76KxGBDCGC/DV7nl0o0le++knhojRTqiRGQQEGuWouJg8pikGlep3L4c1D0YvqoQe2C74Fhsws3KHsUSF/uQ==
+"@hippo-oss/dto-decorators@>=0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@hippo-oss/dto-decorators/-/dto-decorators-0.1.2.tgz#1f92304f91ed4f921138a5194c7b5da9eea6d06e"
+  integrity sha512-c3TkfVL1/ICOxR13yI0zEjkZHMrUEIbHLyJWYZQGtgUFT1Re+TlgJ3w4vimpnrFtxj9g8lfiXc0twY7tbjC7Mg==
 
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
@@ -698,6 +698,11 @@
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.1.tgz#20f18294f797f2209b5f65c8e3b5c8e8261d127c"
   integrity sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==
+
+"@types/validator@13.7.1":
+  version "13.7.1"
+  resolved "https://registry.yarnpkg.com/@types/validator/-/validator-13.7.1.tgz#cdab1b4779f6b1718a08de89d92d2603b71950cb"
+  integrity sha512-I6OUIZ5cYRk5lp14xSOAiXjWrfVoMZVjDuevBYgQDYzZIjsf2CAISpEcXOkFAtpAHbmWIDLcZObejqny/9xq5Q==
 
 "@types/yargs-parser@*":
   version "21.0.0"
