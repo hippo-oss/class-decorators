@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.2.2]
+
+ - Expose `src` and `dist` in package.
+
 ## [0.2.1]
 
  - Fix export bug.

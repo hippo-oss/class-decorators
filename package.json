@@ -1,6 +1,6 @@
 {
     "name": "@hippo-oss/class-decorators",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "DTO decorators with class-transformer and class-validator.",
     "main": "./dist/index.js",
     "repository": "https://github.com/hippo-oss/class-decorators",
@@ -10,7 +10,7 @@
     "types": "dist/index.d.ts",
     "files": [
         "dist",
-        "*.d.ts"
+        "src"
     ],
     "scripts": {
         "build": "tsc --build tsconfig.build.json",
@@ -23,7 +23,7 @@
         "ci:test:coverage": "NODE_ENV=test CI=1 jest --config=jest.coverage.config.js"
     },
     "dependencies": {
-        "@hippo-oss/dto-decorators": ">=0.3.0"
+        "@hippo-oss/dto-decorators": ">=0.3.1"
     },
     "peerDependencies": {
         "class-transformer": ">=0.5.1",
