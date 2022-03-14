@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.3.0]
+
+ - Implement `name` option.
+
 ## [0.2.2]
 
  - Expose `src` and `dist` in package.
