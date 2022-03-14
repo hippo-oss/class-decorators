@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.2.1]
+
+ - Fix export bug.
+
 ## [0.2.0]
 
  - Provide a convenient export for the decorator flavor.
