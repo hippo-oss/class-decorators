@@ -3,7 +3,7 @@ import { IsNumber as IsNumberDecorator, Max, Min } from 'class-validator';
 
 import { createBasePropertyDecorators } from './base';
 
-export function IsNumber(options: IsNumberOptions): PropertyDecorator {
+export function IsNumber(options: IsNumberOptions = {}): PropertyDecorator {
     return composePropertyDecorators([
         ...createBasePropertyDecorators(options),
 

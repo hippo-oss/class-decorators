@@ -3,7 +3,7 @@ import { IsUUID as IsUUIDDecorator } from 'class-validator';
 
 import { createBasePropertyDecorators } from './base';
 
-export function IsUUID(options: IsUUIDOptions): PropertyDecorator {
+export function IsUUID(options: IsUUIDOptions = {}): PropertyDecorator {
     return composePropertyDecorators([
         ...createBasePropertyDecorators(options),
 

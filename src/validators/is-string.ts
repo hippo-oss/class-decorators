@@ -3,7 +3,7 @@ import { IsString as IsStringDecorator, Matches, MaxLength, MinLength } from 'cl
 
 import { createBasePropertyDecorators } from './base';
 
-export function IsString(options: IsStringOptions): PropertyDecorator {
+export function IsString(options: IsStringOptions = {}): PropertyDecorator {
     return composePropertyDecorators([
         ...createBasePropertyDecorators(options),
 

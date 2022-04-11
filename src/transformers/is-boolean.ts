@@ -3,7 +3,7 @@ import { Transform, TransformFnParams, Type } from 'class-transformer';
 
 import { createBasePropertyDecorators } from './base';
 
-export function IsBoolean(options: IsBooleanOptions): PropertyDecorator {
+export function IsBoolean(options: IsBooleanOptions = {}): PropertyDecorator {
     return composePropertyDecorators([
         ...createBasePropertyDecorators(options),
 

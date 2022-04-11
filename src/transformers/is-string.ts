@@ -2,7 +2,7 @@ import { composePropertyDecorators, IsStringOptions } from '@hippo-oss/dto-decor
 
 import { createBasePropertyDecorators } from './base';
 
-export function IsString(options: IsStringOptions): PropertyDecorator {
+export function IsString(options: IsStringOptions = {}): PropertyDecorator {
     return composePropertyDecorators([
         ...createBasePropertyDecorators(options),
     ]);

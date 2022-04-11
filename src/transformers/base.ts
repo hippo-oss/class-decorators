@@ -3,7 +3,7 @@ import { Expose, Transform, TransformFnParams } from 'class-transformer';
 
 /* Create decorators for common options.
  */
-export function createBasePropertyDecorators({ name, nullable, optional }: BaseOptions): PropertyDecorator[] {
+export function createBasePropertyDecorators({ name, nullable, optional }: BaseOptions = {}): PropertyDecorator[] {
     return [
         // Always `@Expose` so the decorated property so that the class-validator can be used with
         // the (recommended) `forbidNonWhitelisted` settting.

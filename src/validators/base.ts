@@ -13,7 +13,7 @@ export function createBasePropertyDecorators({
     nullable,
     optional,
     validate,
-}: BaseOptions): Array<PropertyDecorator | undefined> {
+}: BaseOptions = {}): Array<PropertyDecorator | undefined> {
     return [
         // either allow optional or require the property to be defined
         (nullable || optional) ? IsOptional() : IsDefined(),

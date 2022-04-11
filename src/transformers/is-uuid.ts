@@ -2,7 +2,7 @@ import { composePropertyDecorators, IsUUIDOptions } from '@hippo-oss/dto-decorat
 
 import { createBasePropertyDecorators } from './base';
 
-export function IsUUID(options: IsUUIDOptions): PropertyDecorator {
+export function IsUUID(options: IsUUIDOptions = {}): PropertyDecorator {
     return composePropertyDecorators([
         ...createBasePropertyDecorators(options),
     ]);

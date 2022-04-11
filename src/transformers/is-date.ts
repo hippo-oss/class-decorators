@@ -3,7 +3,7 @@ import { Type } from 'class-transformer';
 
 import { createBasePropertyDecorators } from './base';
 
-export function IsDate(options: IsDateOptions): PropertyDecorator {
+export function IsDate(options: IsDateOptions = {}): PropertyDecorator {
     return composePropertyDecorators([
         ...createBasePropertyDecorators(options),
 
