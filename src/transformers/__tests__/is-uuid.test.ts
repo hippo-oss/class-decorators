@@ -13,16 +13,18 @@ describe('IsUUID', () => {
     });
     it('populates missing required fields with undefined', () => {
         class Fixture {
-            @IsUUID({})
+            @IsUUID()
             property!: string;
         }
 
         const obj = plainToClass(Fixture, {});
         expect(obj).toHaveProperty('property', undefined);
     });
-    it('populates null required fields with undefined', () => {
+    it('populates null optional fields with undefined', () => {
         class Fixture {
-            @IsUUID({})
+            @IsUUID({
+                optional: true,
+            })
             property!: string;
         }
 
@@ -33,7 +35,7 @@ describe('IsUUID', () => {
     });
     it('populates undefined required fields with undefined', () => {
         class Fixture {
-            @IsUUID({})
+            @IsUUID()
             property!: string;
         }
 
@@ -57,7 +59,7 @@ describe('IsUUID', () => {
     });
     it('populates required fields with value', () => {
         class Fixture {
-            @IsUUID({})
+            @IsUUID()
             property!: string;
         }
 
