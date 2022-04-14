@@ -13,16 +13,18 @@ describe('IsString', () => {
     });
     it('populates missing required fields with undefined', () => {
         class Fixture {
-            @IsString({})
+            @IsString()
             property!: string;
         }
 
         const obj = plainToClass(Fixture, {});
         expect(obj).toHaveProperty('property', undefined);
     });
-    it('populates null required fields with undefined', () => {
+    it('populates null optional fields with undefined', () => {
         class Fixture {
-            @IsString({})
+            @IsString({
+                optional: true,
+            })
             property!: string;
         }
 
@@ -33,7 +35,7 @@ describe('IsString', () => {
     });
     it('populates undefined required fields with undefined', () => {
         class Fixture {
-            @IsString({})
+            @IsString()
             property!: string;
         }
 
@@ -57,7 +59,7 @@ describe('IsString', () => {
     });
     it('populates required fields with value', () => {
         class Fixture {
-            @IsString({})
+            @IsString()
             property!: string;
         }
 

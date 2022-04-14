@@ -13,16 +13,18 @@ describe('IsDateString', () => {
     });
     it('populates missing required fields with undefined', () => {
         class Fixture {
-            @IsDateString({})
+            @IsDateString()
             property!: string;
         }
 
         const obj = plainToClass(Fixture, {});
         expect(obj).toHaveProperty('property', undefined);
     });
-    it('populates null required fields with undefined', () => {
+    it('populates null optional fields with undefined', () => {
         class Fixture {
-            @IsDateString({})
+            @IsDateString({
+                optional: true,
+            })
             property!: string;
         }
 
@@ -33,7 +35,7 @@ describe('IsDateString', () => {
     });
     it('populates undefined required fields with undefined', () => {
         class Fixture {
-            @IsDateString({})
+            @IsDateString()
             property!: string;
         }
 
@@ -57,7 +59,7 @@ describe('IsDateString', () => {
     });
     it('populates required fields with value', () => {
         class Fixture {
-            @IsDateString({})
+            @IsDateString()
             property!: string;
         }
 

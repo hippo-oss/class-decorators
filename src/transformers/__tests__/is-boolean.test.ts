@@ -13,16 +13,18 @@ describe('IsBoolean', () => {
     });
     it('populates missing required fields with undefined', () => {
         class Fixture {
-            @IsBoolean({})
+            @IsBoolean()
             property!: boolean;
         }
 
         const obj = plainToClass(Fixture, {});
         expect(obj).toHaveProperty('property', undefined);
     });
-    it('populates null required fields with undefined', () => {
+    it('populates null optional fields with undefined', () => {
         class Fixture {
-            @IsBoolean({})
+            @IsBoolean({
+                optional: true,
+            })
             property!: boolean;
         }
 
@@ -33,7 +35,7 @@ describe('IsBoolean', () => {
     });
     it('populates undefined required fields with undefined', () => {
         class Fixture {
-            @IsBoolean({})
+            @IsBoolean()
             property!: boolean;
         }
 
@@ -57,7 +59,7 @@ describe('IsBoolean', () => {
     });
     it('populates true required fields with true', () => {
         class Fixture {
-            @IsBoolean({})
+            @IsBoolean()
             property!: boolean;
         }
 
@@ -68,7 +70,7 @@ describe('IsBoolean', () => {
     });
     it('populates truthy required fields with true', () => {
         class Fixture {
-            @IsBoolean({})
+            @IsBoolean()
             property!: boolean;
         }
 
@@ -79,7 +81,7 @@ describe('IsBoolean', () => {
     });
     it('populates false required fields with false', () => {
         class Fixture {
-            @IsBoolean({})
+            @IsBoolean()
             property!: boolean;
         }
 
@@ -90,7 +92,7 @@ describe('IsBoolean', () => {
     });
     it('populates falsey (false) required fields with false', () => {
         class Fixture {
-            @IsBoolean({})
+            @IsBoolean()
             property!: boolean;
         }
 
@@ -101,7 +103,7 @@ describe('IsBoolean', () => {
     });
     it('populates falsey (0) required fields with false', () => {
         class Fixture {
-            @IsBoolean({})
+            @IsBoolean()
             property!: boolean;
         }
 

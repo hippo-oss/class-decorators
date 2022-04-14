@@ -13,16 +13,18 @@ describe('IsInteger', () => {
     });
     it('populates missing required fields with undefined', () => {
         class Fixture {
-            @IsInteger({})
+            @IsInteger()
             property!: number;
         }
 
         const obj = plainToClass(Fixture, {});
         expect(obj).toHaveProperty('property', undefined);
     });
-    it('populates null required fields with undefined', () => {
+    it('populates null optional fields with undefined', () => {
         class Fixture {
-            @IsInteger({})
+            @IsInteger({
+                optional: true,
+            })
             property!: number;
         }
 
@@ -33,7 +35,7 @@ describe('IsInteger', () => {
     });
     it('populates undefined required fields with undefined', () => {
         class Fixture {
-            @IsInteger({})
+            @IsInteger()
             property!: number;
         }
 
@@ -57,7 +59,7 @@ describe('IsInteger', () => {
     });
     it('populates string required fields with integer', () => {
         class Fixture {
-            @IsInteger({})
+            @IsInteger()
             property!: number;
         }
 
@@ -68,7 +70,7 @@ describe('IsInteger', () => {
     });
     it('populates number required fields with number', () => {
         class Fixture {
-            @IsInteger({})
+            @IsInteger()
             property!: number;
         }
 

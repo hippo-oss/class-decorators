@@ -28,10 +28,11 @@ describe('IsEnum', () => {
         const obj = plainToClass(Fixture, {});
         expect(obj).toHaveProperty('property', undefined);
     });
-    it('populates null required fields with undefined', () => {
+    it('populates null optional fields with undefined', () => {
         class Fixture {
             @IsEnum({
                 enum: FixtureEnum,
+                optional: true,
             })
             property!: string;
         }

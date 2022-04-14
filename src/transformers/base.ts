@@ -9,11 +9,11 @@ export function createBasePropertyDecorators({ name, nullable, optional }: BaseO
         // the (recommended) `forbidNonWhitelisted` settting.
         Expose({ name }),
 
-        // Ensure that `null` values are converted to `undefined` if values are non-optional; otherwise
+        // Ensure that `null` values are converted to `undefined` if values are optional; otherwise
         // certain checked using `typeof` may see `null` as `object` and misbehave.
         Transform(
             ({ value }: TransformFnParams) => (
-                (value === null && !nullable && !optional)
+                (value === null && !nullable && optional)
                     ? undefined
                     : value as unknown
             ),
