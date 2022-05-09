@@ -17,12 +17,6 @@ orbs:
           - run:
               name: Install dependencies
               command: yarn install
-      install-yarn:
-        steps:
-          - run:
-              name: Install yarn
-              command: |
-                sudo npm install -g -f yarn@latest
       release-library:
         steps:
           - run:
@@ -133,7 +127,6 @@ orbs:
         executor: << parameters.executor >>
         steps:
           - checkout
-          - install-yarn
           - restore-yarn-cache
           - install-dependencies
           - build-source

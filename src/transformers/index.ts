@@ -21,3 +21,5 @@ export const TRANSFORMER_DECORATORS: DTODecoratorFactories = {
     IsString,
     IsUUID,
 };
+
+export * from './pick';
