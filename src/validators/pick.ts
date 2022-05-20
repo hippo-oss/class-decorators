@@ -49,16 +49,17 @@ export function omitValidatorProperties<T, F extends keyof T>(
 
 /* Narrow class-validator properties by omitting the provided fields.
  */
-export function pickValidatorProperties<T, F extends keyof T>(
+export function pickValidatorProperties<T, F extends keyof T, I extends keyof T>(
     cls: Constructor<T>,
     fields: F[],
+    ignoreFields: I[] = [],
 ): Constructor<T> {
 
     const decorator = IsOptional();
 
     // decorate each non-picked field as `@IsOptional()`
     for (const field of propertiesForClass(cls)) {
-        if (!fields.includes(field as F)) {
+        if (!fields.includes(field as F) && !ignoreFields.includes(field as I)) {
             // eslint-disable-next-line @typescript-eslint/ban-types
             decorator(cls.prototype as {}, field);
         }
