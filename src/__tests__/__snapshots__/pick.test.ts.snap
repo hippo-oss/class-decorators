@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pick picks a single field and does not validate 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isDefined": "foo should not be null or undefined",
+      "isString": "foo must be a string",
+    },
+    "property": "foo",
+    "target": ParentFixture {
+      "foo": undefined,
+    },
+    "value": undefined,
+  },
+]
+`;
+
+exports[`pick picks child fields and does not validate 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isDefined": "child should not be null or undefined",
+    },
+    "property": "child",
+    "target": ParentFixture {
+      "child": undefined,
+    },
+    "value": undefined,
+  },
+]
+`;
+
+exports[`pick picks one field and one child field and does not validate if child is omitted 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isDefined": "child should not be null or undefined",
+    },
+    "property": "child",
+    "target": ParentFixture {
+      "child": undefined,
+      "foo": "foo",
+    },
+    "value": undefined,
+  },
+]
+`;
+
+exports[`pick picks one field and one child field and does not validate if field is omitted 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "isDefined": "foo should not be null or undefined",
+      "isString": "foo must be a string",
+    },
+    "property": "foo",
+    "target": ParentFixture {
+      "child": ChildFixture {
+        "baz": "baz",
+      },
+      "foo": undefined,
+    },
+    "value": undefined,
+  },
+]
+`;

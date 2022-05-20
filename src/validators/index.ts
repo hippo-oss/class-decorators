@@ -21,3 +21,5 @@ export const VALIDATOR_DECORATORS: DTODecoratorFactories = {
     IsString,
     IsUUID,
 };
+
+export * from './pick';
