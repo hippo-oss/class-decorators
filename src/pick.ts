@@ -17,10 +17,11 @@ export function derive<T extends Target>(
 
 /* Create a derived class that narrows the `Base` class by picking fields.
  */
-export function pick<T extends Target, F extends keyof T>(
+export function pick<T extends Target, F extends keyof T, I extends keyof T>(
     Base: Constructor<T>,
     name: string,
     fields: F[],
+    ignoreFields: I[] = [],
 ): Constructor<Pick<T, F>> {
 
     const operators = [
@@ -29,7 +30,7 @@ export function pick<T extends Target, F extends keyof T>(
     ];
 
     return operators.reduce(
-        (cls, operator) => operator(cls, fields),
+        (cls, operator) => operator(cls, fields, ignoreFields),
         derive(Base, name),
     );
 }

@@ -19,16 +19,17 @@ function keysForClass<T extends Target>(cls: Constructor<T>): string[] {
 
 /* Narrow class-transformer properties by picking the provided fields.
  */
-export function pickTransformerProperties<T extends Target, F extends keyof T>(
+export function pickTransformerProperties<T extends Target, F extends keyof T, I extends keyof T>(
     cls: Constructor<T>,
     fields: F[],
+    ignoreFields: I[] = [],
 ): Constructor<T> {
 
     const decorator = Exclude();
 
     // decorate each non-picked field as `@Exclude()`
     for (const field of keysForClass(cls)) {
-        if (!fields.includes(field as F)) {
+        if (!fields.includes(field as F) && !ignoreFields.includes(field as I)) {
             // eslint-disable-next-line @typescript-eslint/ban-types
             decorator(cls.prototype as {}, field);
         }
