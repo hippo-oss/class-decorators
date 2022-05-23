@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.5.0]
+
+ - Implements `pick()` DTO operator.
+
 ## [0.4.0]
 
  - Support optional options.
