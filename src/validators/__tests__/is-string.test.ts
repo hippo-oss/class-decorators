@@ -1,6 +1,13 @@
-import { validateSync } from 'class-validator';
+import { validateSync, ValidatorConstraint, ValidatorConstraintInterface } from 'class-validator';
 
 import { IsString } from '../is-string';
+
+@ValidatorConstraint()
+export class ValidateIsFoo implements ValidatorConstraintInterface {
+    validate(text: string) {
+        return text === 'foo';
+    }
+}
 
 describe('IsString', () => {
     it('allows optional string to be omitted', () => {
@@ -172,7 +179,7 @@ describe('IsString', () => {
     it('does not allow required string failing custom validation', () => {
         class Fixture {
             @IsString({
-                validate: (value: string): boolean => value === 'foo',
+                validate: ValidateIsFoo,
             })
             property!: string;
         }
@@ -180,12 +187,12 @@ describe('IsString', () => {
         const obj = new Fixture();
         obj.property = 'bar';
         const errors = validateSync(obj);
-        expect(errors).toHaveLength(0);
+        expect(errors).toHaveLength(1);
     });
-    it('sallow required string passing custom validation', () => {
+    it('allows required string passing custom validation', () => {
         class Fixture {
             @IsString({
-                validate: (value: string): boolean => value === 'foo',
+                validate: ValidateIsFoo,
             })
             property!: string;
         }
