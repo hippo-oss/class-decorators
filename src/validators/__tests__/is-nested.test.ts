@@ -73,4 +73,38 @@ describe('IsNested', () => {
         const errors = validateSync(obj);
         expect(errors).toHaveLength(0);
     });
+    describe('IsOneOf', () => {
+        it('does not allow more parameters than expected', () => {
+            class Fixture {
+                @IsNested({
+                    type: Child,
+                    hasXPropertiesDefined: 1,
+                })
+                property!: Child;
+            }
+
+            const obj = new Fixture();
+            obj.property = { test1: 'test', test2: 'test2' };
+
+            const errors = validateSync(obj);
+            expect(errors).toHaveLength(1);
+            expect(errors).toMatchSnapshot();
+        });
+        it('does not allow less parameters than expected', () => {
+            class Fixture {
+                @IsNested({
+                    type: Child,
+                    hasXPropertiesDefined: 1,
+                })
+                property!: Child;
+            }
+
+            const obj = new Fixture();
+            obj.property = { test1: undefined, test2: null };
+
+            const errors = validateSync(obj);
+            expect(errors).toHaveLength(1);
+            expect(errors).toMatchSnapshot();
+        });
+    });
 });

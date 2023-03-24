@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.6.0]
+
+ - Add `hasXPropertiesDefined` option to `IsNested` decorator.
+
 ## [0.5.0]
 
  - Implements `pick()` DTO operator.

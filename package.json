@@ -1,6 +1,6 @@
 {
     "name": "@hippo-oss/class-decorators",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "description": "DTO decorators with class-transformer and class-validator.",
     "main": "./dist/index.js",
     "repository": "https://github.com/hippo-oss/class-decorators",

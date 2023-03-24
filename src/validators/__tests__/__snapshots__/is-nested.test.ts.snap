@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`IsNested IsOneOf does not allow less parameters than expected 1`] = `
+Array [
+  ValidationError {
+    "children": Array [],
+    "constraints": Object {
+      "IsOneOf": "Exactly 1 of the properties of property must be set, you are currently setting properties: []",
+    },
+    "property": "property",
+    "target": Fixture {
+      "property": Object {
+        "test1": undefined,
+        "test2": null,
+      },
+    },
+    "value": Object {
+      "test1": undefined,
+      "test2": null,
+    },
+  },
+]
+`;
+
 exports[`IsNested does not allow non-nested 1`] = `
 Array [
   ValidationError {
